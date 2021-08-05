@@ -1,0 +1,14 @@
+.container{
+    text-align: center;
+}
+.div{
+    text-align: center;
+    width: max-content;
+    margin-left: 30%;
+}
+li{
+    list-style: none;
+}
+.input{
+    margin: 10px;
+}

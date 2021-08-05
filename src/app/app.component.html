@@ -1,0 +1,48 @@
+
+  <div class="conatainer">
+    <div class="div">
+      <h1>Welcome User</h1>
+      <input 
+      type="text" 
+      placeholder="enter todo name"
+      class="input"
+      [(ngModel)]="name"
+      (keyup.enter)="addToDo()"
+      />
+      <input type="text" placeholder="enter description" class="input" [(ngModel)]="description" (keyup.enter)="addToDo()"/>
+      <button (click)="addToDo()">Add ToDo</button>
+      <ul>
+        
+        <li *ngFor="let item of todos">
+          <input 
+          type="checkbox" 
+          placeholder="enter todo name"
+          class="input"
+          (change)="updateToDo(item._id)"
+          />
+          {{item.name}}
+          <button class="input" (click)="deleteTodo(item._id)">Delete</button>
+          <button class="input" (click)="edit(item._id)">Edit</button>
+
+          
+        </li>
+      </ul>
+      <div *ngIf="editButton">
+        <input 
+        type="text" 
+        class="input"
+        placeholder="enter a todo"
+        [(ngModel)]="selectedTodo.name"
+        (keyup.enter)="editTodo()"
+        />
+        <input type="text" 
+        placeholder="enter description" 
+        class="input" 
+        [(ngModel)]="selectedTodo.text" 
+        (keyup.enter)="editTodo()"/>
+        <button (click)="editTodo()">Update ToDo</button>
+      </div>
+    </div>
+    
+  </div>
+    
